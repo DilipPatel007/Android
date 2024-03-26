@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:interpolator="@anim/move">
+    android:interpolator="@android:anim/bounce_interpolator">
 
+    <!-- An animation set that combines translation and repetition -->
+    <!-- The interpolator specifies a bounce effect -->
     <translate android:fromXDelta="0"
         android:toXDelta="400"
-        />
+        android:duration="4000"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"/>
 
 </set>
