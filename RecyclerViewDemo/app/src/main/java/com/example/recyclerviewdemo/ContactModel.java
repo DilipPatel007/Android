@@ -13,4 +13,9 @@ public class ContactModel {
         this.name = name; // Assign the provided name to the 'name' field
         this.number = number; // Assign the provided phone number to the 'number' field
     }
+
+    ContactModel(String name, String number) {
+        this.name = name; // Assign the provided name to the 'name' field
+        this.number = number; // Assign the provided phone number to the 'number' field
+    }
 }
