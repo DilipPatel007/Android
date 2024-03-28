@@ -1,9 +1,11 @@
 package com.example.customtoastdemo;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Set the duration of the Toast to SHORT
                 toast.setDuration(Toast.LENGTH_SHORT);
+
+                toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
 
                 // Show the custom Toast
                 toast.show();
