@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     // Create an ArrayList to store contact data
     ArrayList<ContactModel> arrContacts = new ArrayList<>();
 
+    RecyclerContactAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         arrContacts.add(new ContactModel(R.drawable.ic_launcher_foreground, "Z", "954585665"));
 
         // Create an adapter and pass the context and contact data
-        RecyclerContactAdapter adapter = new RecyclerContactAdapter(this, arrContacts);
+        adapter = new RecyclerContactAdapter(this, arrContacts);
 
         // Set the adapter for the RecyclerView
         recyclerView.setAdapter(adapter);

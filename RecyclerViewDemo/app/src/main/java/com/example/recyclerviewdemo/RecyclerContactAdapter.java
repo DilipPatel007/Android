@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,23 +58,28 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
         holder.llrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create a dialog for updating the contact
+                // Create the dialog with a theme for consistency
                 Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.add_update_lay);
 
-                // Initialize UI elements in the dialog
-                EditText edtName = dialog.findViewById(R.id.txtName);
-                EditText edtNumber = dialog.findViewById(R.id.txtNumber);
+                // Initialize views with null checks
+                EditText edtName = dialog.findViewById(R.id.edtName);
+                EditText edtNumber = dialog.findViewById(R.id.edtNumber);
                 Button btnAction = dialog.findViewById(R.id.btnAction);
                 TextView txtTitle = dialog.findViewById(R.id.txtTitle);
 
-                // Set the title for the update action
-                txtTitle.setText("Update Contact");
-                btnAction.setText("Update"); // Change button text to "Update"
+                if (edtName == null || edtNumber == null || btnAction == null || txtTitle == null) {
+                    Log.e("TAG", "Error: Could not find views in dialog");
+                    return;
+                }
 
-                // Pre-fill the EditText fields with existing contact data
-                edtName.setText(arrContacts.get(position).name);
-                edtNumber.setText(arrContacts.get(position).number);
+                // Set title and button text
+                txtTitle.setText("Update Contact");
+                btnAction.setText("Update");
+
+                // Pre-fill EditTexts with existing data
+                edtName.setText((arrContacts.get(position)).name);
+                edtNumber.setText((arrContacts.get(position)).number);
 
                 btnAction.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -82,21 +88,16 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
                         String number = edtNumber.getText().toString();
 
                         if (!name.isEmpty() && !number.isEmpty()) {
-                            // Update the contact data
                             arrContacts.set(position, new ContactModel(name, number));
-                            notifyItemChanged(position); // Notify RecyclerView of the change
-                            dialog.dismiss(); // Close the dialog
-                        } else {
-                            Toast.makeText(context, "Please enter both name and number", Toast.LENGTH_SHORT).show();
+                            notifyItemChanged(position);
+                            dialog.dismiss();
                         }
                     }
                 });
 
-                // Show the dialog
-                dialog.show();
+                dialog.show(); // Show the dialog
             }
         });
-
 
         // Long-click listener for contact row
         holder.llrow.setOnLongClickListener(new View.OnLongClickListener() {
@@ -104,7 +105,7 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
             public boolean onLongClick(View v) {
                 // Show a confirmation dialog for contact deletion
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                        .setTitle("Delete Conatact")
+                        .setTitle("Delete Contact")
                         .setMessage("Are you sure you want to delete?")
                         .setIcon(R.drawable.baseline_delete_24)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

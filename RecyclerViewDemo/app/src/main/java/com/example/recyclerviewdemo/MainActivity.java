@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         arrContacts.add(new ContactModel(name, number));
 
                         adapter.notifyItemInserted(arrContacts.size() - 1);
+//                        recyclerView.scrollToPosition(arrContacts.size() - 1);
 
                         dialog.dismiss();
 
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         arrContacts.add(new ContactModel(R.drawable.ic_launcher_foreground, "Z", "954585665"));
 
         // Create an adapter and pass the context and contact data
-        RecyclerContactAdapter adapter = new RecyclerContactAdapter(this, arrContacts);
+        adapter = new RecyclerContactAdapter(this, arrContacts);
 
         // Set the adapter for the RecyclerView
         recyclerView.setAdapter(adapter);
