@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pi = PendingIntent.getActivity(this, REQ_CODE, iNotify, PendingIntent.FLAG_IMMUTABLE);
 
 //        PendingIntent pi = PendingIntent.getActivity(this, REQ_CODE, iNotify, PendingIntent.FLAG_UPDATE_CURRENT);
+//        The error message indicates an issue with PendingIntent creation on devices running Android API level 31 (Android 12) and above.
+//        It states that either FLAG_IMMUTABLE or FLAG_MUTABLE must be specified for security reasons.
 
         // Create the BigPictureStyle notification content
         Notification.BigPictureStyle bigPictureStyle = new Notification.BigPictureStyle()
