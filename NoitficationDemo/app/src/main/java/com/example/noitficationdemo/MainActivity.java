@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         iNotify.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pi = PendingIntent.getActivity(this, REQ_CODE, iNotify, PendingIntent.FLAG_IMMUTABLE);
+        // A PendingIntent in Android is a token that you give to another application or the Android system to perform an action on your behalf.
+        // A PendingIntent allows you to delegate an action to be performed in the future, even if your application is not running.
 
 //        PendingIntent pi = PendingIntent.getActivity(this, REQ_CODE, iNotify, PendingIntent.FLAG_UPDATE_CURRENT);
 //        The error message indicates an issue with PendingIntent creation on devices running Android API level 31 (Android 12) and above.
