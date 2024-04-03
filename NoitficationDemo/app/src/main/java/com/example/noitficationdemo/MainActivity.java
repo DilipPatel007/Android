@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                             .setSmallIcon(R.drawable.new_logo)
                             .setContentText("New Message")
                             .setSubText("New Message from Dilip")
-                            .setOngoing(true)
+                            .setOngoing(false)
                             .setStyle(bigPictureStyle)
                             .setContentIntent(pi)
                             .setChannelId(CHANNEL_ID) // Assign the channel ID
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                             .setSmallIcon(R.drawable.new_logo)
                             .setContentText("New Message")
                             .setSubText("New Message from Dilip")
-                            .setAutoCancel(true)
+                            .setOngoing(false)
                             .setStyle(bigPictureStyle)
                             .setContentIntent(pi)
                             .build();
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                             .setSmallIcon(R.drawable.new_logo)
                             .setContentText("New Message")
                             .setSubText("New Message from Dilip")
-                            .setOngoing(true)
+                            .setAutoCancel(true)
                             .setStyle(inboxStyle)
                             .setContentIntent(pi)
                             .setChannelId(CHANNEL_ID) // Assign the channel ID

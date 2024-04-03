@@ -23,39 +23,43 @@ public class MainActivity extends AppCompatActivity {
         btnFragC = findViewById(R.id.btnFragC);
 
         // Default opening Frag
-        loadFrag(new BFragment());
+        loadFrag(new BFragment(),0);
 
         btnFragA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFrag(new AFragment());
+                loadFrag(new AFragment(),1);
             }
         });
 
         btnFragB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFrag(new BFragment());
+                loadFrag(new BFragment(),1);
             }
         });
 
         btnFragC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFrag(new CFragment());
+                loadFrag(new CFragment(),1);
             }
         });
 
     }
-    public void loadFrag(Fragment fragment) {
+    public void loadFrag(Fragment fragment, int flag) {
         // Get the FragmentManager
         FragmentManager fm = getSupportFragmentManager();
 
         // Begin a new FragmentTransaction
         FragmentTransaction ft = fm.beginTransaction();
 
-        // Add the specified fragment to the container (R.id.container)
-        ft.add(R.id.container, fragment);
+        if (flag == 0) {
+            // Add the specified fragment to the container (R.id.container)
+            ft.add(R.id.container, fragment);
+        } else {
+            ft.replace(R.id.container, fragment);
+        }
 
         // Commit the transaction to apply the changes
         ft.commit();
