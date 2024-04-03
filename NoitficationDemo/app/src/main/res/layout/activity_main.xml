@@ -8,13 +8,34 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnAction"
+        android:id="@+id/btnSecondActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click on me!"
+        android:text="Button Intent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/btnBigPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Big Picture!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <Button
+        android:id="@+id/btnInfobox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Infobox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

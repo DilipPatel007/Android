@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         // Get the NotificationManager service
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        // Create an Intent to launch the MainActivity when the notification is clicked
-        Intent iNotify = new Intent(getApplicationContext(), MainActivity.class);
+        // Create an Intent to launch the SecondActivity when the notification is clicked
+        Intent iNotify = new Intent(getApplicationContext(), Second_Activity.class);
         iNotify.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pi = PendingIntent.getActivity(this, REQ_CODE, iNotify, PendingIntent.FLAG_IMMUTABLE);
@@ -72,47 +72,102 @@ public class MainActivity extends AppCompatActivity {
                 .setSummaryText("Message from Dilip");
 
 
-        // Create the notification
-        Notification notification;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            // Create a notification for Android Oreo (API level 26) and above
-            notification = new Notification.Builder(this)
-                    .setLargeIcon(largeIcon)
-                    .setSmallIcon(R.drawable.new_logo)
-                    .setContentText("New Message")
-                    .setSubText("New Message from Dilip")
-                    .setOngoing(true)
-                    .setStyle(bigPictureStyle)
-                    .setContentIntent(pi)
-                    .setChannelId(CHANNEL_ID) // Assign the channel ID
-                    .build();
-
-            // Create a notification channel (required for Android Oreo and above)
-            nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "General", NotificationManager.IMPORTANCE_HIGH));
-
-        } else {
-            // Create a notification for older Android versions (similar to above)
-            notification = new Notification.Builder(this)
-                    .setLargeIcon(largeIcon)
-                    .setSmallIcon(R.drawable.new_logo)
-                    .setContentText("New Message")
-                    .setSubText("New Message from Dilip")
-                    .setAutoCancel(true)
-                    .setStyle(bigPictureStyle)
-                    .setContentIntent(pi)
-                    .build();
-        }
-
         // Find the button by its ID
-        Button btnAction = findViewById(R.id.btnAction);
+        Button btnBigPicture = findViewById(R.id.btnBigPicture);
+        Button btnInfobox = findViewById(R.id.btnInfobox);
 
         // Set onClickListener for the button to show the notification
-        btnAction.setOnClickListener(new View.OnClickListener() {
+        btnBigPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create the notification
+                Notification notification;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    // Create a notification for Android Oreo (API level 26) and above
+                    notification = new Notification.Builder(MainActivity.this)
+                            .setLargeIcon(largeIcon)
+                            .setSmallIcon(R.drawable.new_logo)
+                            .setContentText("New Message")
+                            .setSubText("New Message from Dilip")
+                            .setOngoing(true)
+                            .setStyle(bigPictureStyle)
+                            .setContentIntent(pi)
+                            .setChannelId(CHANNEL_ID) // Assign the channel ID
+                            .build();
+
+                    // Create a notification channel (required for Android Oreo and above)
+                    nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "General", NotificationManager.IMPORTANCE_HIGH));
+
+                } else {
+                    // Create a notification for older Android versions (similar to above)
+                    notification = new Notification.Builder(MainActivity.this)
+                            .setLargeIcon(largeIcon)
+                            .setSmallIcon(R.drawable.new_logo)
+                            .setContentText("New Message")
+                            .setSubText("New Message from Dilip")
+                            .setAutoCancel(true)
+                            .setStyle(bigPictureStyle)
+                            .setContentIntent(pi)
+                            .build();
+                }
                 nm.notify(NOTIFICATION_ID, notification);
             }
         });
 
+        btnInfobox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                // Create an Intent to launch the MainActivity when the notification is clicked
+                Intent iNotify = new Intent(getApplicationContext(), MainActivity.class);
+                iNotify.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                PendingIntent pi = PendingIntent.getActivity(MainActivity.this, REQ_CODE, iNotify, PendingIntent.FLAG_IMMUTABLE);
+
+
+                // Create the notification
+                Notification notification;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    // Create a notification for Android Oreo (API level 26) and above
+                    notification = new Notification.Builder(MainActivity.this)
+                            .setLargeIcon(largeIcon)
+                            .setSmallIcon(R.drawable.new_logo)
+                            .setContentText("New Message")
+                            .setSubText("New Message from Dilip")
+                            .setOngoing(true)
+                            .setStyle(inboxStyle)
+                            .setContentIntent(pi)
+                            .setChannelId(CHANNEL_ID) // Assign the channel ID
+                            .build();
+
+                    // Create a notification channel (required for Android Oreo and above)
+                    nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "General", NotificationManager.IMPORTANCE_HIGH));
+
+                } else {
+                    // Create a notification for older Android versions (similar to above)
+                    notification = new Notification.Builder(MainActivity.this)
+                            .setLargeIcon(largeIcon)
+                            .setSmallIcon(R.drawable.new_logo)
+                            .setContentText("New Message")
+                            .setSubText("New Message from Dilip")
+                            .setAutoCancel(true)
+                            .setStyle(inboxStyle)
+                            .setContentIntent(pi)
+                            .build();
+                }
+
+                nm.notify(NOTIFICATION_ID, notification);
+            }
+        });
+
+        Button btnSecondActivity = findViewById(R.id.btnSecondActivity);
+        btnSecondActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Second_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
