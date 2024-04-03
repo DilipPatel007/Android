@@ -19,7 +19,8 @@ import androidx.core.content.res.ResourcesCompat;
 public class MainActivity extends AppCompatActivity {
 
     // Define a unique channel ID for notifications
-    private static final String CHANNEL_ID = "Test Channel";
+    private static final String CHANNEL_ID1 = "Big Picture Style";
+    private static final String CHANNEL_ID2 = "Infobox Style";
     private static final int NOTIFICATION_ID = 100;
     private static final int REQ_CODE = 100;
     @Override
@@ -92,11 +93,12 @@ public class MainActivity extends AppCompatActivity {
                             .setOngoing(false)
                             .setStyle(bigPictureStyle)
                             .setContentIntent(pi)
-                            .setChannelId(CHANNEL_ID) // Assign the channel ID
+                            .setChannelId(CHANNEL_ID1) // Assign the channel ID
                             .build();
 
                     // Create a notification channel (required for Android Oreo and above)
-                    nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "General", NotificationManager.IMPORTANCE_HIGH));
+                    nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID1, "Big Picture", NotificationManager.IMPORTANCE_HIGH));
+
 
                 } else {
                     // Create a notification for older Android versions (similar to above)
@@ -138,11 +140,13 @@ public class MainActivity extends AppCompatActivity {
                             .setAutoCancel(true)
                             .setStyle(inboxStyle)
                             .setContentIntent(pi)
-                            .setChannelId(CHANNEL_ID) // Assign the channel ID
+                            .setChannelId(CHANNEL_ID2) // Assign the channel ID
                             .build();
 
                     // Create a notification channel (required for Android Oreo and above)
-                    nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "General", NotificationManager.IMPORTANCE_HIGH));
+                    nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID2, "Infobox", NotificationManager.IMPORTANCE_HIGH));
+
+
 
                 } else {
                     // Create a notification for older Android versions (similar to above)
