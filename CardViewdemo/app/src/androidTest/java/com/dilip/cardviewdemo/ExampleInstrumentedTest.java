@@ -1,4 +1,4 @@
-package com.example.cardviewdemo;
+package com.dilip.cardviewdemo;
 
 import android.content.Context;
 
