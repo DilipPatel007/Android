@@ -1,4 +1,4 @@
-package com.dilip.myapplication
+package com.dilip.activitycycledemo
 
 import android.os.Bundle
 import android.util.Log

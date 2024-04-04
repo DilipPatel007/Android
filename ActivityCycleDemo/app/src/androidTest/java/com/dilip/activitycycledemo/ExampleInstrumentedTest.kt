@@ -1,4 +1,4 @@
-package com.dilip.myapplication
+package com.dilip.activitycycledemo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.dilip.myapplication
+package com.dilip.activitycycledemo
 
 import org.junit.Test
 
