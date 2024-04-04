@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tablayoutdemo"
+    namespace = "com.dilip.tablayoutdemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.tablayoutdemo"
+        applicationId = "com.dilip.tablayoutdemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

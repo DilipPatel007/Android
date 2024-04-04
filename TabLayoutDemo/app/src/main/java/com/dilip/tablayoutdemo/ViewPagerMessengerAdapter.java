@@ -1,4 +1,4 @@
-package com.example.tablayoutdemo;
+package com.dilip.tablayoutdemo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

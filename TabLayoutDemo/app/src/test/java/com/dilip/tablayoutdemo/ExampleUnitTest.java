@@ -1,4 +1,4 @@
-package com.example.tablayoutdemo;
+package com.dilip.tablayoutdemo;
 
 import org.junit.Test;
 

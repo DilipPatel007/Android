@@ -1,4 +1,4 @@
-package com.example.tablayoutdemo;
+package com.dilip.tablayoutdemo;
 
 import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
