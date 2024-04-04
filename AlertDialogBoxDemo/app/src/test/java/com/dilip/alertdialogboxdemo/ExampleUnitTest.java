@@ -1,4 +1,4 @@
-package com.example.alertdialogboxdemo;
+package com.dilip.alertdialogboxdemo;
 
 import org.junit.Test;
 

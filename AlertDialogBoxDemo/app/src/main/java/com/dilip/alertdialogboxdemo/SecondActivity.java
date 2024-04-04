@@ -1,4 +1,4 @@
-package com.example.alertdialogboxdemo;
+package com.dilip.alertdialogboxdemo;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
