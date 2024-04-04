@@ -1,13 +1,14 @@
-package com.example.bmicalculatorinjava;
+package com.dilip.bmicalculatorinjava;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import com.example.bmicalculatorinjava.R;
 
 public class MainActivity extends AppCompatActivity {
 

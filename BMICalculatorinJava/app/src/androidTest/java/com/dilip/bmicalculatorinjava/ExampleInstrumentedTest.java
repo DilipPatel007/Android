@@ -1,4 +1,4 @@
-package com.example.bmicalculatorinjava;
+package com.dilip.bmicalculatorinjava;
 
 import android.content.Context;
 
