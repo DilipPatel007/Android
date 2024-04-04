@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.animationdemo"
+    namespace = "com.dilip.animationdemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.animationdemo"
+        applicationId = "com.dilip.animationdemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
