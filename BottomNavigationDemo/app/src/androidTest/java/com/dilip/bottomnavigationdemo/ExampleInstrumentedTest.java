@@ -1,4 +1,4 @@
-package com.example.bottomnavigationdemo;
+package com.dilip.bottomnavigationdemo;
 
 import android.content.Context;
 

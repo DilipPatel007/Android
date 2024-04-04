@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bottomnavigationdemo"
+    namespace = "com.dilip.bottomnavigationdemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bottomnavigationdemo"
+        applicationId = "com.dilip.bottomnavigationdemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
