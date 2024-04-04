@@ -1,4 +1,4 @@
-package com.example.recyclerviewdemo;
+package com.dilip.recyclerviewdemo;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

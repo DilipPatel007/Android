@@ -1,6 +1,4 @@
-package com.example.recyclerviewdemo;
-
-import java.util.ArrayList;
+package com.dilip.recyclerviewdemo;
 
 public class ContactModel {
     int img; // An integer representing the image resource ID

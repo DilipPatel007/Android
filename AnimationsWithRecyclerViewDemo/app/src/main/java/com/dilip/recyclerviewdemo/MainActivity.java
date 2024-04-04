@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.recyclerviewdemo.R;
-
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
 
     // Create an ArrayList to store contact data
     ArrayList<ContactModel> arrContacts = new ArrayList<>();
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Find the RecyclerView in the layout by its ID
-        RecyclerView recyclerView = findViewById(R.id.recyclerContact);
+        recyclerView = findViewById(R.id.recyclerContact);
 
         // Set a LinearLayoutManager for the RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

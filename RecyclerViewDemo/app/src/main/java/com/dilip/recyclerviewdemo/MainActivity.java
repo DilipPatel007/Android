@@ -1,4 +1,4 @@
-package com.example.recyclerviewdemo;
+package com.dilip.recyclerviewdemo;
 
 import android.app.Dialog;
 import android.os.Bundle;
