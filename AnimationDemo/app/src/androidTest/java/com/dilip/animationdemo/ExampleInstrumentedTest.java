@@ -1,4 +1,4 @@
-package com.example.animationdemo;
+package com.dilip.animationdemo;
 
 import android.content.Context;
 
