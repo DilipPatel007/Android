@@ -5,8 +5,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.cardviewdemo.R;
-
 public class MainActivity extends AppCompatActivity {
 
     CardView cardView;

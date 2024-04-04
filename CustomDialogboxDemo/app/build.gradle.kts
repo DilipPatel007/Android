@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.customdialogboxdemo"
+    namespace = "com.dilip.customdialogboxdemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.customdialogboxdemo"
+        applicationId = "com.dilip.customdialogboxdemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

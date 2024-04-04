@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cardviewdemo"
+    namespace = "com.dilip.cardviewdemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.cardviewdemo"
+        applicationId = "com.dilip.cardviewdemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

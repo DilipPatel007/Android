@@ -1,4 +1,4 @@
-package com.example.customdialogboxdemo;
+package com.dilip.customdialogboxdemo;
 
 import android.content.Context;
 

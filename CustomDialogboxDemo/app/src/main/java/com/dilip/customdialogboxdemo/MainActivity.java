@@ -1,4 +1,4 @@
-package com.example.customdialogboxdemo;
+package com.dilip.customdialogboxdemo;
 
 import android.app.Dialog;
 import android.os.Bundle;
