@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.dilip.recyclerviewdemo"
+    namespace = "com.dilip.recyclerviewwithanimationsdemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.dilip.recyclerviewdemo"
+        applicationId = "com.dilip.recyclerviewwithanimationsdemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

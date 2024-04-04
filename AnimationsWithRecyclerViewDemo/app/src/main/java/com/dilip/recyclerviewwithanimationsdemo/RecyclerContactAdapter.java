@@ -1,5 +1,6 @@
-package com.dilip.recyclerviewdemo;
+package com.dilip.recyclerviewwithanimationsdemo;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,13 +49,14 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
      * @param viewType  The view type of the new view.
      * @return A new ViewHolder that holds the views for a single contact item.
      */
+    // Create a ViewHolder for the RecyclerView
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view;
-        ViewHolder viewHolder;
-        view = LayoutInflater.from(context).inflate(R.layout.contact_row, parent, false);
-        viewHolder = new ViewHolder(view);
+        // Inflate the layout for each contact row
+        View view = LayoutInflater.from(context).inflate(R.layout.contact_row, parent, false);
+        // Create a new ViewHolder with the inflated view
+        ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
@@ -63,10 +66,14 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
      * @param holder   The ViewHolder that holds the views for the contact item.
      * @param position The position of the item within the adapter's data set.
      */
+    // Bind data to the ViewHolder
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        // Set the contact image resource based on the position in the list
         holder.imgContact.setImageResource(arrContacts.get(position).img);
+        // Set the contact name text
         holder.txtName.setText(arrContacts.get(position).name);
+        // Set the contact number text
         holder.txtNumber.setText(arrContacts.get(position).number);
 
         setAnimation(holder.itemView, position);
@@ -86,23 +93,23 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
     /**
      * This class represents a single ViewHolder that holds the views for a contact item.
      */
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    // ViewHolder class to hold references to UI elements
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtName, txtNumber;
         ImageView imgContact;
+        LinearLayout llrow;
 
-        /**
-         * This constructor initializes the views for the contact item.
-         *
-         * @param itemView The view that represents a single contact item.
-         */
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            // Initialize UI elements from the contact_row layout
             txtName = itemView.findViewById(R.id.txtName);
             txtNumber = itemView.findViewById(R.id.txtNumber);
             imgContact = itemView.findViewById(R.id.imgContact);
+            llrow = itemView.findViewById(R.id.llrow);
         }
     }
+
 
     public void setAnimation(View viewToAnimate, int position) {
         Animation slideIn = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);

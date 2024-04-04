@@ -1,4 +1,4 @@
-package com.dilip.recyclerviewdemo;
+package com.dilip.recyclerviewwithanimationsdemo;
 
 import org.junit.Test;
 

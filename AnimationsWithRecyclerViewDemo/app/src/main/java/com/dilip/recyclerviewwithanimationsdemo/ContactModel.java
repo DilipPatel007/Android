@@ -1,4 +1,4 @@
-package com.dilip.recyclerviewdemo;
+package com.dilip.recyclerviewwithanimationsdemo;
 
 public class ContactModel {
     int img; // An integer representing the image resource ID
