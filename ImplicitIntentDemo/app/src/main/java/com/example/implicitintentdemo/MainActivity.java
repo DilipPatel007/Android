@@ -70,8 +70,13 @@ public class MainActivity extends AppCompatActivity {
         btnOpenMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                double latitude = 37.4220; // Example latitude
+//                double longitude = -122.0841; // Example longitud
+//                Uri gmmIntentUri = Uri.parse("geo:" + latitude + "," + longitude);
+
                 // Open Google Maps (you can customize the location)
                 Uri gmmIntentUri = Uri.parse("geo:0,0?q=Googleplex, Mountain View, CA");
+
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
