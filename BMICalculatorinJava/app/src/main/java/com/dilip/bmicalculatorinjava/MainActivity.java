@@ -8,8 +8,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.bmicalculatorinjava.R;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

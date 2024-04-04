@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bmicalculatorinjava"
+    namespace = "com.dilip.bmicalculatorinjava"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bmicalculatorinjava"
+        applicationId = "com.dilip.bmicalculatorinjava"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
