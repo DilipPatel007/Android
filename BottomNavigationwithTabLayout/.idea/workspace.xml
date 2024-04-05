@@ -61,33 +61,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7cb80a7-1271-46ec-a74a-6e6aa85bdc5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/BrowseFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/HistoryFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/LibraryFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/MoreFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/TabOneFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/TabThreeFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/TabTwoFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/UpdatesFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/java/com/example/bottomnavigationwithtablayoutdemo/ViewPagerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/drawable/baseline_home_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/drawable/baseline_more_horiz_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_browse.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_history.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_more.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_tab_one.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_tab_three.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_tab_two.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/layout/fragment_updates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BottomNavigationwithTabLayoutDemo/app/src/main/res/menu/nav_items.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AnimationDemo/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AnimationDemo/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AnimationsWithRecyclerViewDemo/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AnimationsWithRecyclerViewDemo/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BottomNavigationDemo/app/src/main/java/com/dilip/bottomnavigationdemo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BottomNavigationDemo/app/src/main/java/com/dilip/bottomnavigationdemo/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecyclerViewDemo/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecyclerViewDemo/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f7cb80a7-1271-46ec-a74a-6e6aa85bdc5f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
