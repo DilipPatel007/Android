@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Handle navigation item clicks
                 if (id == R.id.nav_Library) {
-                    loadFragment(new LibraryFragment(), 0);
+                    loadFragment(new LibraryFragment(), 1);
 
                 } else if (id == R.id.nav_Updates) {
                     loadFragment(new UpdatesFragment(), 1);
