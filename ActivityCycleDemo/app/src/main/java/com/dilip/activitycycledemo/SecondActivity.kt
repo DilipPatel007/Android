@@ -28,31 +28,37 @@ class SecondActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.i("MYTAG", "SecondActivity: OnStart")
+        Toast.makeText(SecondActivity.this,"onStart",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onResume() {
         super.onResume()
         Log.i("MYTAG", "SecondActivity: OnResume")
+        Toast.makeText(SecondActivity.this,"OnResume",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onPause() {
         super.onPause()
         Log.i("MYTAG", "SecondActivity: OnPause")
+        Toast.makeText(SecondActivity.this,"OnPause",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onStop() {
         super.onStop()
         Log.i("MYTAG", "SecondActivity: OnStop")
+        Toast.makeText(SecondActivity.this,"OnStop",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.i("MYTAG", "SecondActivity: OnDestroy")
+        Toast.makeText(SecondActivity.this,"OnDestroy",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onRestart() {
         super.onRestart()
         Log.i("MYTAG", "SecondActivity: OnRestart")
+        Toast.makeText(SecondActivity.this,"onRestart",Toast.LENGTH_SHORT).show(); 
     }
 
 }

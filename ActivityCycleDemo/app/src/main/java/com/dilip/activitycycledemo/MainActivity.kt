@@ -52,31 +52,37 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.i("MYTAG", "MainActivity: OnStart")
+        Toast.makeText(getApplicationContext(),"OnStart",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onResume() {
         super.onResume()
         Log.i("MYTAG", "MainActivity: OnResume")
+        Toast.makeText(getApplicationContext(),"onResume",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onPause() {
         super.onPause()
         Log.i("MYTAG", "MainActivity: OnPause")
+        Toast.makeText(getApplicationContext(),"onPause",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onStop() {
         super.onStop()
         Log.i("MYTAG", "MainActivity: OnStop")
+        Toast.makeText(getApplicationContext(),"onStop",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.i("MYTAG", "MainActivity: OnDestroy")
+        Toast.makeText(getApplicationContext(),"onDestroy",Toast.LENGTH_SHORT).show(); 
     }
 
     override fun onRestart() {
         super.onRestart()
         Log.i("MYTAG", "MainActivity: OnRestart")
+        Toast.makeText(getApplicationContext(),"onRestart",Toast.LENGTH_SHORT).show(); 
     }
 
 }
