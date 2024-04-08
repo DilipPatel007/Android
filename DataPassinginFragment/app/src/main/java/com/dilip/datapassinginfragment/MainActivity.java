@@ -1,6 +1,7 @@
 package com.dilip.datapassinginfragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnFragA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFrag(new AFragment(),1);
+                loadFrag(AFragment.getInstance("Dilip", 21),1);
             }
         });
 
@@ -51,9 +52,14 @@ public class MainActivity extends AppCompatActivity {
     public void loadFrag(Fragment fragment, int flag) {
         // Get the FragmentManager
         FragmentManager fm = getSupportFragmentManager();
-
         // Begin a new FragmentTransaction
         FragmentTransaction ft = fm.beginTransaction();
+
+//        Bundle bundle = new Bundle();
+//        bundle.putString("Arg1", "Raman");
+//        bundle.putInt("Arg2", 7);
+
+//        fragment.setArguments(bundle);
 
         if (flag == 0) {
             // Add the specified fragment to the container (R.id.container)
@@ -68,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Commit the transaction to apply the changes
         ft.commit();
+    }
+
+    public void CallFromFragment(){
+        Log.d("inAct", "fromFragment");
     }
 
 }

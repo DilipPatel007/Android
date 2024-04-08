@@ -25,7 +25,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Member variables for UI components
+    // Member variables for UI components (already initialized in onCreate)
     private TabLayout tabLayout;
     private ViewPager2 viewPager2;
     private ViewPagerAdapter adapter;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         bnView = findViewById(R.id.bnView);
         frameLayout = findViewById(R.id.container);
 
-        // Handle tab selection events
+        // Handle tab selection events (switching between tabs in ViewPager2)
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -61,18 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
+                // No specific action needed here (optional)
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                // Show ViewPager2 and hide FrameLayout (redundant with onTabSelected, can be removed)
-                viewPager2.setVisibility(View.VISIBLE);
-                frameLayout.setVisibility(View.GONE);
+                
             }
         });
 
-        // Handle page change events in ViewPager2
+        // Handle page change events in ViewPager2 (updating TabLayout selection)
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -123,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
 
 //        // Set listener for navigation item selection
 //        bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
