@@ -71,12 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id==R.id.optShare) {
                     loadFragment(new ShareFragment(), 1);
                 } else {
-                    loadFragment(new LogoutFragment(), 1);
+                    loadFragment(new LogoutFragment(), 1); // Logout
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
-                
-                
+
             }
 
             public void onBackPressed() {
