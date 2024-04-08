@@ -1,30 +1,27 @@
 package com.dilip.googlemapsdemo;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 // MainActivity class that extends AppCompatActivity and implements OnMapReadyCallback interface
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -94,11 +91,28 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                .image(BitmapDescriptorFactory.fromResource(R.drawable.baseline_account_balance_wallet_24)) // Set the image for the overlay
 //                .clickable(true)); // Make the overlay
 
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            geocoder.getFromLocation(22.3109, 73.1926, 1);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        myMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        myMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(@NonNull LatLng latLng) {
+                // Create a Geocoder instance to get the address from the clicked location
+                Geocoder geocoder = new Geocoder(MainActivity.this);
+                String address = "";
+                try {
+                    // Get the address from the latitude and longitude
+                    List<Address> addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
+                    if (addresses != null && !addresses.isEmpty()) {
+                        address = addresses.get(0).getAddressLine(0);
+                        Log.d("Addr",addresses.get(0).getAddressLine(0));
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                // Display the address as a Toast message
+                Toast.makeText(MainActivity.this, "Clicked at: " + address, Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 }
