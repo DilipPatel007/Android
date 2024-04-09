@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -55,6 +56,11 @@ public class AFragment extends Fragment {
 
             // Log the values retrieved from the arguments
             Log.d("Values from Act", "Name is " + name + ", Age is " + age);
+
+
+            // Create and display a Toast with the values
+            Toast.makeText(getActivity(), "Name is " + name + ", Age is " + age, Toast.LENGTH_SHORT).show();
+
 
             ((MainActivity) getActivity()).CallFromFragment();
         }
