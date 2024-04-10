@@ -99,3 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
+
+//        Initialization: The onCreate method initializes various components, including DevicePolicyManager, ActivityManager, and a ComponentName representing our DeviceAdminReceiver class.
+//        UI Setup: It sets up UI elements (buttons) and assigns click listeners to them.
+//        onResume: Checks if our app is an active device administrator and shows/hides buttons accordingly.
+//        Button Clicks:
+//        lock: Locks the device immediately if admin features are enabled.
+//        enable: Requests the user to enable our app as a device administrator.
+//        disable: Removes our app from the list of active device administrators.
+//        onActivityResult: Handles the result of the admin enablement request.
