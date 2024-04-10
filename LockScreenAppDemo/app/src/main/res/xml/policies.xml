@@ -5,3 +5,23 @@
     </uses-policies>
 
 </device-admin>
+
+<!--    Device Administrator:-->
+<!--    In Android, a device administrator is an app that has special privileges to manage certain aspects of a device.-->
+<!--    These privileges allow the app to enforce security policies, control device settings, and perform actions that regular apps cannot.-->
+<!--    Device administrators are commonly used in enterprise environments for managing company-owned devices or implementing security measures.-->
+<!--     <device-admin> Element:-->
+<!--       The <device-admin> element is part of an XML configuration file that defines the policies and behavior of a device administrator app.-->
+<!--       It specifies the policies and features that the app can utilize.-->
+<!--         <uses-policies> Element:-->
+<!--            Within the <device-admin> element, there’s a <uses-policies> section.-->
+<!--            This section lists the specific policies that the device administrator app can use.-->
+<!--            Policies define what actions the app is allowed to perform on the device.-->
+<!--               <force-lock/> Policy:-->
+<!--                  The <force-lock/> policy is one of the policies available to device administrators.-->
+<!--                  It allows the app to force the device to lock immediately.-->
+<!--                  When this policy is invoked, the device’s lock screen is activated as if the lock screen timeout has expired.-->
+<!--                  For example, if the user’s device is idle, the app can trigger an immediate lock to enhance security.-->
+<!--     Usage:-->
+<!--     To control the <force-lock/> policy, the device administrator must include a “force-lock” tag in the <uses-policies> section of its metadata.-->
+<!--     Once authorized, the app can call methods like DevicePolicyManager.lockNow() to enforce an immediate lock on the device.-->
