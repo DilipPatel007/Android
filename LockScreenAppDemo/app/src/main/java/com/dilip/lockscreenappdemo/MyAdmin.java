@@ -11,11 +11,13 @@ public class MyAdmin extends DeviceAdminReceiver {
 
     @Override
     public void onEnabled(@NonNull Context context, @NonNull Intent intent) {
+        // Display a toast message when the device admin is enabled
         Toast.makeText(context, "Device Admin: enabled", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDisabled(@NonNull Context context, @NonNull Intent intent) {
-        Toast.makeText(context, "Device Admin: disables", Toast.LENGTH_SHORT).show();
+        // Display a toast message when the device admin is disabled
+        Toast.makeText(context, "Device Admin: disabled", Toast.LENGTH_SHORT).show();
     }
 }
