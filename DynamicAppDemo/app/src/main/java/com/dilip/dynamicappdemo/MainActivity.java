@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     // Declare a list to hold user names retrieved from the API
-    private ArrayList<String> userNames = new ArrayList<>();
+    private ArrayList<String> arrNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +68,16 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject objResult = jsonArray.getJSONObject(i);
                                 String name = objResult.getString("name");
 
-                                // Add the name to the userNames list
-                                userNames.add(name);
+                                // For username
+                                String userName = objResult.getString("username");
+
+                                // Add the name to the arrNames list
+                                arrNames.add(name+": "+userName);
                             }
 
-                            // Create a new adapter with the collected user names
+                            // Create a new adapter with the collected arrNames
                             ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
-                                    android.R.layout.simple_list_item_1, userNames);
+                                    android.R.layout.simple_list_item_1, arrNames);
 
                             // Set the adapter on the ListView to display the data
                             listView.setAdapter(adapter);
