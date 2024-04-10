@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Lock Button -->
+    <Button
+        android:id="@+id/lock"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="Lock the Phone"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/black"
+    android:textColor="@android:color/white"
+    />
+
+    <!-- Enable Button -->
+    <Button
+        android:id="@+id/enableBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Enable"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lock"
+        android:backgroundTint="#009688"
+    android:textColor="@android:color/white"
+    />
+
+    <!-- Disable Button -->
+    <Button
+        android:id="@+id/disableBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Disable"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/enableBtn"
+        android:backgroundTint="#F44336"
+    android:textColor="@android:color/white"
+    />
+
+</RelativeLayout>
