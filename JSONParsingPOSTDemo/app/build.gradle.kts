@@ -40,4 +40,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation("com.amitshekhar.android:jackson-android-networking:1.0.2")
 }
