@@ -2,10 +2,13 @@ package com.dilip.databasedemo;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
 
 public class MyDBHelper extends SQLiteOpenHelper {
 
@@ -46,6 +49,26 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
         // Insert the contact into the table
         db.insert(TABLE_CONTACT, null, values);
+    }
+
+    public ArrayList<ContactModel> fetchContact(){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CONTACT, null);
+
+        ArrayList<ContactModel> arrContacts = new ArrayList<>();
+        while (cursor.moveToNext()){
+
+            ContactModel model = new ContactModel();
+
+            model.id = cursor.getInt(0);
+            model.name = cursor.getString(1);
+            model.phone_no = cursor.getString(2);
+
+            arrContacts.add(model);
+        }
+        return arrContacts;
     }
 }
 
