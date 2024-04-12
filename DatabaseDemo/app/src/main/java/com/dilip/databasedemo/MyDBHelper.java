@@ -1,4 +1,4 @@
-package com.dilip.databasedemo;
+ package com.dilip.databasedemo;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -102,6 +102,28 @@ public class MyDBHelper extends SQLiteOpenHelper {
         // Return the ArrayList containing all contact information
         return arrContacts;
     }
+
+    public void updateContact(ContactModel contactModel) {
+        // Get a writable database instance
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a ContentValues object to store the updated phone number
+        ContentValues values = new ContentValues();
+        values.put(KEY_PHONE_NUMBER, contactModel.phone_no);
+
+        // Update the contact record with the new phone number
+        db.update(TABLE_CONTACT, values, KEY_ID + " = " + contactModel.id, null);
+    }
+
+    public void deleteContact(int id) {
+        // Get a writable database instance
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Delete the contact record with the specified ID
+        db.delete(TABLE_CONTACT, KEY_ID + " = ? ", new String[]{String.valueOf(id)});
+    }
+
+
 }
 
 

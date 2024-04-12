@@ -25,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
 //        dbHelper.addContact("Vraj", "6848768482");
 //        dbHelper.addContact("Dhruv", "6449599455");
 
+// Create a new ContactModel instance
+        ContactModel model = new ContactModel();
+        model.id = 1;
+        model.name = "Dilip";
+        model.phone_no = "1234567890";
+// Update the contact with the specified model
+        dbHelper.updateContact(model);
+
+// Delete the contact with ID 2
+        dbHelper.deleteContact(2);
+
         // Fetch contacts from the database
         ArrayList<ContactModel> arrContacts = dbHelper.fetchContact();
 
