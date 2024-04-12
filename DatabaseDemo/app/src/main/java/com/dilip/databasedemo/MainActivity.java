@@ -1,9 +1,8 @@
 package com.dilip.databasedemo;
 
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
-
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // Create an instance of our MyDBHelper class
         MyDBHelper dbHelper = new MyDBHelper(this);
 
 //        dbHelper.addContact("Dilip", "5556454656");
@@ -26,15 +25,26 @@ public class MainActivity extends AppCompatActivity {
 //        dbHelper.addContact("Vraj", "6848768482");
 //        dbHelper.addContact("Dhruv", "6449599455");
 
+        // Fetch contacts from the database
         ArrayList<ContactModel> arrContacts = dbHelper.fetchContact();
 
-        for (int i=0; i<arrContacts.size(); i++){
-            Log.d("CONTACT_INFO","Name: " + arrContacts.get(i).name
+        // Loop through the contacts and print them to the log
+        for (int i = 0; i < arrContacts.size(); i++) {
+            Log.d("CONTACT_INFO", "Name: " + arrContacts.get(i).name
                     + ", Phone No: " + arrContacts.get(i).phone_no);
-
         }
 
+        // Get a reference to the ListView element
+        ListView listView = findViewById(R.id.listView);
+
+        // Create a ContactAdapter object to manage the list data
+        ContactAdapter adapter = new ContactAdapter(this, arrContacts);
+        // Set the adapter on the ListView
+        listView.setAdapter(adapter);
 
 
+//        ArrayAdapter<ContactModel> adapter = new ArrayAdapter<>(
+//                MainActivity.this, android.R.layout.simple_list_item_1, arrContacts);
+//        listView.setAdapter(adapter);
     }
 }
