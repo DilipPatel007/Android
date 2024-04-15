@@ -8,24 +8,29 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "expense")
 public class Expense {
     @PrimaryKey(autoGenerate = true)
-    private int id;
-    @ColumnInfo(name = "title")
-    private String title;
-    @ColumnInfo(name = "amount")
-    private String amount;
+    private int id; // Unique identifier for each expense
 
-    Expense(int id, String title, String amount){
+    @ColumnInfo(name = "title")
+    private String title; // Title or name of the expense (e.g., "Groceries")
+
+    @ColumnInfo(name = "amount")
+    private String amount; // Amount spent for the expense (e.g., "50.00")
+
+    // Constructor with all fields (including ID)
+    Expense(int id, String title, String amount) {
         this.id = id;
         this.title = title;
         this.amount = amount;
     }
 
+    // Constructor without ID (for inserting new expenses)
     @Ignore
-    Expense(String title, String amount){
+    Expense(String title, String amount) {
         this.title = title;
         this.amount = amount;
     }
 
+    // Getter and setter methods for each field
     public int getId() {
         return id;
     }

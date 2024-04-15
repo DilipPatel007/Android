@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    // UI elements
     EditText edtTitle, edtAmount;
     Button btnAdd, btnDelete;
 
@@ -24,28 +25,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize UI elements
         edtTitle = findViewById(R.id.edtTitle);
         edtAmount = findViewById(R.id.edtAmount);
         btnAdd = findViewById(R.id.btnAdd);
         btnDelete = findViewById(R.id.btnDelete);
 
+        // Get a database helper instance
         DatabaseHelper databaseHelper = DatabaseHelper.getDB(this);
 
+        // List view for displaying expenses
         ListView lvExpense = findViewById(R.id.lvExpense);
 
-// Create an ArrayList to store expense data
+        // Create an ArrayList to store expense data
         ArrayList<Expense> expenseList = new ArrayList<>();
 
-// Initialize your custom adapter (you'll need to create this adapter)
+        // Initialize your custom adapter (you'll need to create this adapter)
         ExpenseAdapter expenseAdapter = new ExpenseAdapter(this, expenseList);
         lvExpense.setAdapter(expenseAdapter);
 
+        // Add click listener for btnAdd
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String title = edtTitle.getText().toString();
                 String amount = edtAmount.getText().toString();
 
+                // Input validation
                 if (title.isEmpty()) {
                     // Show a toast message if the name field is empty
                     Toast.makeText(getApplicationContext(), "Please enter a name", Toast.LENGTH_SHORT).show();
@@ -58,20 +64,17 @@ public class MainActivity extends AppCompatActivity {
                     return; // Exit the method early
                 }
 
-                // Add the transaction to the database
+                // Add expense to database
                 databaseHelper.expenseDao().addTx(new Expense(title, amount));
 
-                // Retrieve all expenses from the database
+                // Retrieve all expenses from database
                 ArrayList<Expense> arrExpenses = (ArrayList<Expense>) databaseHelper.expenseDao().getAllExpense();
 
-                // Clear the existing data and add the new data to the adapter
+                // Update adapter data
                 expenseList.clear();
                 expenseList.addAll(arrExpenses);
-
-                // Notify the adapter that the data has changed
                 expenseAdapter.notifyDataSetChanged();
             }
         });
-
     }
 }

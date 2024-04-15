@@ -29,12 +29,13 @@ public class ExpenseAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return position; // Use the position as the ID
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
+            // Inflate the custom layout for each item
             convertView = LayoutInflater.from(context).inflate(R.layout.expense_list_item, parent, false);
         }
 
@@ -42,9 +43,10 @@ public class ExpenseAdapter extends BaseAdapter {
         Expense expense = expenseList.get(position);
 
         // Bind data to views within the layout
-        TextView tvTitle = convertView.findViewById(R.id.tvTitle); //
+        TextView tvTitle = convertView.findViewById(R.id.tvTitle); // Replace with your TextView IDs
         TextView tvAmount = convertView.findViewById(R.id.tvAmount);
 
+        // Set the title and amount for the current expense
         tvTitle.setText(expense.getTitle());
         tvAmount.setText(expense.getAmount());
 
