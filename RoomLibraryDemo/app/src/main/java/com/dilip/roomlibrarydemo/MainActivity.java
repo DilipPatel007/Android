@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         // Create an ArrayList to store expense data
         ArrayList<Expense> expenseList = new ArrayList<>();
 
-        // Initialize your custom adapter (you'll need to create this adapter)
+        // Initialize your custom adapter
         ExpenseAdapter expenseAdapter = new ExpenseAdapter(this, expenseList);
         lvExpense.setAdapter(expenseAdapter);
 

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ExpenseAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<Expense> expenseList; // Your data source
+    private ArrayList<Expense> expenseList;
 
     public ExpenseAdapter(Context context, ArrayList<Expense> expenseList) {
         this.context = context;
@@ -29,7 +29,7 @@ public class ExpenseAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position; // Use the position as the ID
+        return position; // Used the position as the ID
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ExpenseAdapter extends BaseAdapter {
         Expense expense = expenseList.get(position);
 
         // Bind data to views within the layout
-        TextView tvTitle = convertView.findViewById(R.id.tvTitle); // Replace with your TextView IDs
+        TextView tvTitle = convertView.findViewById(R.id.tvTitle); //
         TextView tvAmount = convertView.findViewById(R.id.tvAmount);
 
         // Set the title and amount for the current expense
