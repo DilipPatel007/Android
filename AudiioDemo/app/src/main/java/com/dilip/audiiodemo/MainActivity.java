@@ -11,41 +11,45 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
-
 public class MainActivity extends AppCompatActivity {
 
-    Button btnPlay, btnPause, btnStop, btnOnlinePlay, btnOnlinePause, btnOnlineStop;
+    // Declare buttons for local audio control
+    Button btnPlay, btnPause, btnStop;
+
+    // Declare buttons for online audio control
+    Button btnOnlinePlay, btnOnlinePause, btnOnlineStop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize local audio buttons
         btnPlay = findViewById(R.id.btnPlay);
         btnPause = findViewById(R.id.btnPause);
         btnStop = findViewById(R.id.btnStop);
 
+        // Initialize online audio buttons
         btnOnlinePlay = findViewById(R.id.btnOnlinePlay);
         btnOnlinePause = findViewById(R.id.btnOnlinePause);
         btnOnlineStop = findViewById(R.id.btnOnlineStop);
 
+        // Create a MediaPlayer instance for local audio
         MediaPlayer mp = new MediaPlayer();
-
         mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
+        // Set the path for local audio file
         String aPath = "android.resource://"+getPackageName()+"/raw/audio";
-
         Uri audioUri = Uri.parse(aPath);
 
         try {
-
             mp.setDataSource(this, audioUri);
             mp.prepare();
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+        // Set click listeners for local audio buttons
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,16 +72,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Create a MediaPlayer instance for online audio
         MediaPlayer op = new MediaPlayer();
-
         op.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
+        // Set the path for online audio file
         String onlineAudioPath = "https://highlifeng.com.ng/swahilisongs/wp-content/uploads/2024/01/Ariana_Grande_-_7_Rings.mp3";
         Uri onlineUri = Uri.parse(onlineAudioPath);
         try {
             op.setDataSource(this, onlineUri);
             op.prepare();
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
