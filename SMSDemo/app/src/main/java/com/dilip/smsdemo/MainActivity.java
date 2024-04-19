@@ -5,34 +5,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listView;
-    private ArrayList<String> messageList;
-    private MyListAdapter adapter;
+    private TextView txtValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = findViewById(R.id.message_list); // Replace with your ListView ID
-        messageList = new ArrayList<>();
-        adapter = new MyListAdapter(this, messageList); // Create and set adapter
-        listView.setAdapter(adapter);
+        txtValues = findViewById(R.id.txtValues);
     }
 
-    public void updateMessageList(String mobNo, String msg) {
-        String message = "MobNo: " + mobNo + "\nMsg: " + msg;
-        messageList.add(message); // Add message to the list
-        adapter.notifyDataSetChanged(); // Notify adapter about data change
+    public void updateTextView(String mobNo, String msg) {
+        txtValues.setText("MobNo: " + mobNo + "\nMsg: " + msg);
     }
 
     @Override
@@ -40,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         // Register BroadcastReceiver to listen for update intent
-        IntentFilter filter = new IntentFilter("update_message");
+        IntentFilter filter = new IntentFilter("update_message"); // Matches the action set in SmsReceiver
         registerReceiver(messageReceiver, filter);
     }
 
@@ -55,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String mobNo = intent.getStringExtra("mobNo");
             String message = intent.getStringExtra("message");
-            updateMessageList(mobNo, message);
+            updateTextView(mobNo, message);
         }
     };
 }
