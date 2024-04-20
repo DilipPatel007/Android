@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "465479526028",
+    "project_id": "tensile-axiom-290512",
+    "storage_bucket": "tensile-axiom-290512.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465479526028:android:a41eb263dd16b49edffda9",
+        "android_client_info": {
+          "package_name": "com.dilip.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465479526028-6sd9gt95vcua90u7gh0h1v7ikss8nc8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2oAxfkXucM9pmSHAanq0lhqi3QhNUM8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465479526028-6sd9gt95vcua90u7gh0h1v7ikss8nc8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
