@@ -60,7 +60,24 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         buttonLoadData = findViewById(R.id.buttonLoadData);
         buttonLoadData.setOnClickListener(this);
 
-        // Request permissions if needed (replace with actual permission handling)
+          /*ContentResolver contentResolver=getContentResolver();
+        Cursor cursor=contentResolver.query(ContactsContract.Contacts.CONTENT_URI,
+                mColumnProjection,
+                null,
+                null,
+                null);
+
+        if(cursor!=null && cursor.getCount()>0){
+            StringBuilder stringBuilderQueryResult=new StringBuilder("");
+            while (cursor.moveToNext()){
+                stringBuilderQueryResult.append(cursor.getString(0)+" , "+cursor.getString(1)+" , "+cursor.getString(2)+"\n");
+            }
+            textViewQueryResult.setText(stringBuilderQueryResult.toString());
+        }else{
+            textViewQueryResult.setText("No Contacts in device");
+        }*/
+
+        // Request permissions
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
         }
