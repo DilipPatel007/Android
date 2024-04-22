@@ -46,8 +46,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="click_to_login">Click to login</string>
-    <string name="click_to_register">Click to register</string>
+    <string name="click_to_login">Want To Login ?</string>
+    <string name="click_to_register">Want To Register ?</string>
     <string name="user_details">User Details</string>
     <string name="click_to_logout">Click to Logout</string>
 </resources>

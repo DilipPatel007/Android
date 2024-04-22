@@ -12,13 +12,20 @@
     tools:context=".Login">
 
     <TextView
-        android:text="@string/login"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Welcome Back !"
+        android:textSize="42sp"
+        android:textColor="#FFBD4D"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log In To Continue"
+        android:textSize="23sp"
+        android:textColor="#FF8596"
+        android:layout_marginBottom="20dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -52,14 +59,15 @@
         android:id="@+id/btnLogin"
         android:text="@string/login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/registerNow"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/click_to_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

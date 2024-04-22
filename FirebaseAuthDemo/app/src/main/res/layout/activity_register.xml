@@ -12,13 +12,24 @@
     tools:context=".Register">
 
     <TextView
-        android:text="@string/register"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="New User"
+        android:textSize="42sp"
+        android:textColor="#FFBD4D"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nice To See You Here"
+        android:textSize="23sp"
+        android:textColor="#FF8596"
+        android:layout_marginBottom="20dp">
+
+    </TextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -52,14 +63,15 @@
         android:id="@+id/btnRegister"
         android:text="@string/register"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/loginNow"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/click_to_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
